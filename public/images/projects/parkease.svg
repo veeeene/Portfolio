@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 360" width="600" height="360">
+  <rect width="600" height="360" rx="16" fill="#121215"/>
+  <!-- NetBeans Java Desktop Window -->
+  <rect x="50" y="35" width="500" height="290" rx="10" fill="#18181b" stroke="#3a3a42" stroke-width="1.5"/>
+  <rect x="50" y="35" width="500" height="32" rx="10" fill="#202024"/>
+  <rect x="65" y="47" width="8" height="8" rx="2" fill="#8a8a92"/>
+  <text x="82" y="55" fill="#f4f4f5" font-family="'Courier New', monospace" font-size="11" font-weight="700">ParkEase — Desktop Parking Manager (Java / MySQL)</text>
+
+  <!-- Parking Grid Matrix -->
+  <g transform="translate(80, 90)">
+    <!-- Slot Rows -->
+    <rect x="0" y="0" width="80" height="46" rx="6" fill="#202026" stroke="#3a3a42" stroke-width="1"/>
+    <text x="40" y="22" fill="#10b981" font-family="'Courier New', monospace" font-size="10" font-weight="700" text-anchor="middle">A-01</text>
+    <text x="40" y="38" fill="#8a8a92" font-family="'Courier New', monospace" font-size="8.5" text-anchor="middle">AVAILABLE</text>
+
+    <rect x="95" y="0" width="80" height="46" rx="6" fill="#202026" stroke="#e0584f" stroke-width="1"/>
+    <text x="135" y="22" fill="#e0584f" font-family="'Courier New', monospace" font-size="10" font-weight="700" text-anchor="middle">A-02</text>
+    <text x="135" y="38" fill="#8a8a92" font-family="'Courier New', monospace" font-size="8.5" text-anchor="middle">ABC-1234</text>
+
+    <rect x="190" y="0" width="80" height="46" rx="6" fill="#202026" stroke="#3a3a42" stroke-width="1"/>
+    <text x="230" y="22" fill="#10b981" font-family="'Courier New', monospace" font-size="10" font-weight="700" text-anchor="middle">A-03</text>
+    <text x="230" y="38" fill="#8a8a92" font-family="'Courier New', monospace" font-size="8.5" text-anchor="middle">AVAILABLE</text>
+
+    <!-- Slot Row 2 -->
+    <rect x="0" y="60" width="80" height="46" rx="6" fill="#202026" stroke="#e0584f" stroke-width="1"/>
+    <text x="40" y="82" fill="#e0584f" font-family="'Courier New', monospace" font-size="10" font-weight="700" text-anchor="middle">B-01</text>
+    <text x="40" y="98" fill="#8a8a92" font-family="'Courier New', monospace" font-size="8.5" text-anchor="middle">XYZ-9876</text>
+
+    <rect x="95" y="60" width="80" height="46" rx="6" fill="#202026" stroke="#3a3a42" stroke-width="1"/>
+    <text x="135" y="82" fill="#10b981" font-family="'Courier New', monospace" font-size="10" font-weight="700" text-anchor="middle">B-02</text>
+    <text x="135" y="98" fill="#8a8a92" font-family="'Courier New', monospace" font-size="8.5" text-anchor="middle">AVAILABLE</text>
+
+    <rect x="190" y="60" width="80" height="46" rx="6" fill="#202026" stroke="#3a3a42" stroke-width="1"/>
+    <text x="230" y="82" fill="#10b981" font-family="'Courier New', monospace" font-size="10" font-weight="700" text-anchor="middle">B-03</text>
+    <text x="230" y="98" fill="#8a8a92" font-family="'Courier New', monospace" font-size="8.5" text-anchor="middle">AVAILABLE</text>
+  </g>
+
+  <!-- Statistics Panel -->
+  <rect x="380" y="90" width="140" height="180" rx="8" fill="#202026" stroke="#2e2e38" stroke-width="1"/>
+  <text x="395" y="115" fill="#f4f4f5" font-family="'Courier New', monospace" font-size="11" font-weight="700">LOG SUMMARY</text>
+  <text x="395" y="140" fill="#8a8a92" font-family="'Courier New', monospace" font-size="10">Occupied: 2</text>
+  <text x="395" y="160" fill="#8a8a92" font-family="'Courier New', monospace" font-size="10">Available: 4</text>
+  <text x="395" y="180" fill="#8a8a92" font-family="'Courier New', monospace" font-size="10">Rate: ₱40/hr</text>
+  <rect x="395" y="215" width="110" height="28" rx="6" fill="#f4f4f5"/>
+  <text x="450" y="233" fill="#0a0a0a" font-family="'Courier New', monospace" font-size="10" font-weight="700" text-anchor="middle">GENERATE LOG</text>
+</svg>

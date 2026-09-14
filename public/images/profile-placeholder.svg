@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <defs>
+    <pattern id="dotPattern" x="0" y="0" width="12" height="12" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.2" fill="#888888" opacity="0.35"/>
+    </pattern>
+    <linearGradient id="avatarGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2a2a30"/>
+      <stop offset="100%" stop-color="#121215"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background Base -->
+  <rect width="400" height="400" rx="28" fill="url(#avatarGrad)"/>
+
+  <!-- Halftone Dot Overlay -->
+  <rect width="400" height="400" rx="28" fill="url(#dotPattern)"/>
+
+  <!-- Inner Hairline Border -->
+  <rect x="10" y="10" width="380" height="380" rx="20" fill="none" stroke="#44444a" stroke-width="1.5" stroke-dasharray="4 4"/>
+
+  <!-- Stylized Geometric Avatar Silhouette -->
+  <g transform="translate(200, 175)">
+    <!-- Head -->
+    <circle cx="0" cy="-25" r="54" fill="#f4f4f5" opacity="0.95"/>
+    <!-- Glasses / Tech Accent -->
+    <rect x="-38" y="-36" width="32" height="18" rx="4" fill="#121215"/>
+    <rect x="6" y="-36" width="32" height="18" rx="4" fill="#121215"/>
+    <line x1="-6" y1="-28" x2="6" y2="-28" stroke="#121215" stroke-width="3"/>
+    <!-- Body / Shoulders -->
+    <path d="M-90,140 C-90,65 -50,50 0,50 C50,50 90,65 90,140 Z" fill="#f4f4f5" opacity="0.95"/>
+  </g>
+
+  <!-- Monogram Badge -->
+  <rect x="160" y="325" width="80" height="26" rx="13" fill="#0a0a0a" stroke="#ffffff" stroke-width="1" opacity="0.9"/>
+  <text x="200" y="342" fill="#ffffff" font-family="'Courier New', monospace" font-size="11" font-weight="700" letter-spacing="2" text-anchor="middle">JV — 2026</text>
+</svg>

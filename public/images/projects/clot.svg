@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 360" width="600" height="360">
+  <rect width="600" height="360" rx="16" fill="#121215"/>
+  <!-- Phone 1 (Splash/Onboarding) -->
+  <rect x="130" y="40" width="150" height="280" rx="24" fill="#18181b" stroke="#3a3a42" stroke-width="2"/>
+  <rect x="175" y="48" width="60" height="12" rx="6" fill="#2a2a30"/>
+  <circle cx="205" cy="140" r="30" fill="#2a2a30"/>
+  <rect x="155" y="190" width="100" height="12" rx="4" fill="#f4f4f5"/>
+  <rect x="165" y="212" width="80" height="8" rx="3" fill="#8a8a92"/>
+  <rect x="155" y="260" width="100" height="28" rx="14" fill="#f4f4f5"/>
+
+  <!-- Phone 2 (Catalog / Bottom Sheet) -->
+  <rect x="320" y="40" width="150" height="280" rx="24" fill="#18181b" stroke="#3a3a42" stroke-width="2"/>
+  <rect x="365" y="48" width="60" height="12" rx="6" fill="#2a2a30"/>
+  <rect x="338" y="75" width="114" height="65" rx="8" fill="#242429"/>
+  <rect x="338" y="150" width="114" height="65" rx="8" fill="#242429"/>
+  <!-- Bottom Sheet Overlay -->
+  <path d="M 321 210 L 469 210 L 469 318 A 22 22 0 0 1 447 340 L 343 340 A 22 22 0 0 1 321 318 Z" fill="#2a2a30"/>
+  <rect x="380" y="218" width="30" height="4" rx="2" fill="#8a8a92"/>
+  <rect x="338" y="235" width="80" height="10" rx="4" fill="#f4f4f5"/>
+</svg>
