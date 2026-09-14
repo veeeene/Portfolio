@@ -23,6 +23,13 @@ export interface Certification {
   image?: string;
 }
 
+export interface StatItem {
+  value: string;
+  label: string;
+  href: string;
+  external?: boolean;
+}
+
 export interface ExperienceItem {
   year: string;
   role: string;
@@ -44,7 +51,7 @@ export const RESUME_DATA = {
   githubHandle: "veeeene",
   
   objective:
-    "Aspiring Information Technology student specializing in Web and Application Development with hands-on experience in full-stack development and a solid grasp of modern web technologies. Strong communicator and problem solver, eager to learn and contribute to team initiatives in a dynamic development environment.",
+    "Seeking an internship or junior developer role where I can apply my web development, offline-first engineering, and mobile app design skills to build impactful real-world digital products.",
   
   aboutLead:
     "I'm a full-stack developer and IT student at BulSU Bustos Campus. I build scalable web applications, explore 2D game physics, and develop offline-first platforms.",
@@ -56,8 +63,8 @@ export const RESUME_DATA = {
     { value: "5+", label: "Projects Shipped", href: "#projects" },
     { value: "4+", label: "Frameworks Mastered", href: "#stack" },
     { value: "BSIT", label: "BulSU Bustos", href: "#education" },
-    { value: "2026", label: "Shipping Daily", href: "https://github.com/veeeene", external: true },
-  ],
+    { value: "480+", label: "GitHub Contributions", href: "#activity" },
+  ] as StatItem[],
 
   education: [
     {
