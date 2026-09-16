@@ -64,7 +64,7 @@ export function CertificationsSection() {
         {certs.map((cert) => (
           <div
             key={cert.id}
-            className="group relative flex flex-col justify-between rounded-xl bg-gradient-to-b from-gray-50 to-white p-4 text-center shadow-bryl-card transition-all duration-300 hover:-translate-y-0.5 hover:shadow-bryl-card-hover dark:from-[#18181b] dark:to-[#121215] dark:border dark:border-gray-800"
+            className="group relative flex flex-col h-full rounded-xl bg-gradient-to-b from-gray-50 to-white p-4 text-center shadow-bryl-card transition-all duration-300 hover:-translate-y-0.5 hover:shadow-bryl-card-hover dark:from-[#18181b] dark:to-[#121215] dark:border dark:border-gray-800"
           >
             {/* Inset hairline frame border */}
             <span
@@ -72,8 +72,8 @@ export function CertificationsSection() {
               className="pointer-events-none absolute inset-[5px] rounded-lg border border-gray-200/70 dark:border-gray-800/80"
             />
 
-            <div className="relative flex flex-col items-center">
-              {/* Certificate Image or Badge Icon */}
+            {/* Top Area: Image preview or Badge Frame (always consistent height) */}
+            <div className="relative w-full shrink-0">
               {cert.image ? (
                 <div
                   onClick={() => setActivePreviewCert(cert)}
@@ -93,25 +93,33 @@ export function CertificationsSection() {
                   </div>
                 </div>
               ) : (
-                <div className="flex h-10 w-10 items-center justify-center rounded-lg border border-gray-200 bg-white font-mono text-xs font-bold text-ink shadow-sm dark:border-gray-800 dark:bg-gray-800 dark:text-white mb-2">
-                  {cert.issuer.includes("Cisco")
-                    ? "CSC"
-                    : cert.issuer.includes("Azure")
-                    ? "AZ"
-                    : cert.issuer.slice(0, 2).toUpperCase()}
+                <div className="relative w-full h-36 mb-3 rounded-lg border border-dashed border-gray-200 dark:border-gray-800 bg-gray-50/70 dark:bg-[#0c0c0f]/60 flex items-center justify-center">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-lg border border-gray-200 bg-white font-mono text-xs font-bold text-ink shadow-sm dark:border-gray-800 dark:bg-gray-800 dark:text-white">
+                    {cert.issuer.includes("Cisco")
+                      ? "CSC"
+                      : cert.issuer.includes("Azure")
+                      ? "AZ"
+                      : cert.issuer.slice(0, 2).toUpperCase()}
+                  </div>
                 </div>
               )}
+            </div>
 
-              <h3 className="text-[13px] font-semibold leading-snug text-ink dark:text-white px-1">
+            {/* Middle Content Area: Title & Issuer taking remaining flex space */}
+            <div className="relative flex flex-1 flex-col items-center justify-start w-full">
+              <h3 className="text-[13px] font-semibold leading-snug text-ink dark:text-white px-1 line-clamp-2 min-h-[2.4rem] flex items-center justify-center">
                 {cert.title}
               </h3>
 
-              <p className="mt-1 font-mono text-[9.5px] uppercase tracking-wider text-gray-400 dark:text-gray-400">
+              <p className="mt-1.5 font-mono text-[9.5px] uppercase tracking-wider text-gray-400 dark:text-gray-400 line-clamp-3">
                 {cert.issuer}
               </p>
+            </div>
 
+            {/* Bottom Pinned Area: Verified Stamp & Action Buttons (strictly aligned across all cards) */}
+            <div className="relative mt-auto pt-4 w-full flex flex-col items-center shrink-0">
               {/* Verified Laurel Stamp */}
-              <div className="mt-2.5 flex items-center gap-1.5 text-gray-400 transition-colors group-hover:text-ink dark:text-gray-500 dark:group-hover:text-white">
+              <div className="flex items-center justify-center gap-1.5 text-gray-400 transition-colors group-hover:text-ink dark:text-gray-500 dark:group-hover:text-white mb-3">
                 <svg viewBox="0 0 13 22" fill="currentColor" aria-hidden="true" className="h-[14px] w-auto shrink-0">
                   <path d="M0 -4C2.1 -2.6 2.1 2.6 0 4C-2.1 2.6 -2.1 -2.6 0 -4Z" transform="translate(8 5) rotate(46)" />
                   <path d="M0 -4.3C2.3 -2.8 2.3 2.8 0 4.3C-2.3 2.8 -2.3 -2.8 0 -4.3Z" transform="translate(4.6 11) rotate(14)" />
@@ -128,46 +136,45 @@ export function CertificationsSection() {
                   </svg>
                 </span>
               </div>
-            </div>
 
-            {/* Bottom action links & admin controls */}
-            <div className="relative mt-3 pt-2 border-t border-gray-100 dark:border-gray-800/60 flex items-center justify-center gap-2">
-              {cert.image && (
-                <button
-                  type="button"
-                  onClick={() => setActivePreviewCert(cert)}
-                  className="inline-flex items-center gap-1 font-mono text-[10px] text-gray-500 hover:text-ink dark:text-gray-400 dark:hover:text-white transition-colors"
-                >
-                  <Eye size={11} />
-                  <span>View Cert</span>
-                </button>
-              )}
+              {/* Action Links & Admin Controls Footer */}
+              <div className="w-full pt-2.5 border-t border-gray-100 dark:border-gray-800/60 flex items-center justify-center gap-3 min-h-[30px]">
+                {cert.image && (
+                  <button
+                    type="button"
+                    onClick={() => setActivePreviewCert(cert)}
+                    className="inline-flex items-center gap-1 font-mono text-[10px] text-gray-500 hover:text-ink dark:text-gray-400 dark:hover:text-white transition-colors"
+                  >
+                    <Eye size={11} />
+                    <span>View Cert</span>
+                  </button>
+                )}
 
-              {cert.link && (
-                <a
-                  href={cert.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1 font-mono text-[10px] text-gray-500 hover:text-ink dark:text-gray-400 dark:hover:text-white transition-colors"
-                >
-                  <ExternalLink size={11} />
-                  <span>Credential</span>
-                </a>
-              )}
+                {cert.link && (
+                  <a
+                    href={cert.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1 font-mono text-[10px] text-gray-500 hover:text-ink dark:text-gray-400 dark:hover:text-white transition-colors"
+                  >
+                    <ExternalLink size={11} />
+                    <span>Credential</span>
+                  </a>
+                )}
 
-              {/* Admin controls */}
-              {isAdmin && (
-                <div className="flex items-center gap-1.5 ml-auto">
-                  <EditButton
-                    label="Edit"
-                    onClick={() => {
-                      setEditingCert(cert);
-                      setModalOpen(true);
-                    }}
-                  />
-                  <DeleteButton onClick={() => handleDelete(cert.id)} />
-                </div>
-              )}
+                {isAdmin && (
+                  <div className="flex items-center gap-1.5 ml-auto">
+                    <EditButton
+                      label="Edit"
+                      onClick={() => {
+                        setEditingCert(cert);
+                        setModalOpen(true);
+                      }}
+                    />
+                    <DeleteButton onClick={() => handleDelete(cert.id)} />
+                  </div>
+                )}
+              </div>
             </div>
           </div>
         ))}
